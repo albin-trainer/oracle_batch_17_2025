@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/orders" xmlns:tns="http://www.example.org/orders" elementFormDefault="qualified">
+
+    <element name="customerorders" type="tns:customerorders"></element>
+    
+    <complexType name="customerorders">
+    	<sequence>
+    		<element name="customers" type="tns:customers"></element>
+    		<element name="orders" type="tns:orders"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="customers">
+    	<sequence>
+    		<element name="customer" type="tns:customer" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="customer" >
+    	<sequence>
+    		<element name="name" type="string"></element>
+    		<element name="address" type="string"></element>
+    	</sequence>
+    	<attribute name="id" type="ID"></attribute>
+    </complexType>
+
+    <complexType name="orders">
+    	<sequence>
+    		<element name="order" type="tns:order" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="order">
+    	<sequence>
+    		<element name="amoint" type="string"></element>
+    	</sequence>
+    	<attribute name="orderid" type="ID"></attribute>
+    	<attribute name="cid" type="IDREF"></attribute>
+    </complexType>
+</schema>

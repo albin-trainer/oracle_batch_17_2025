@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees> 
+ <!--  zero or more employee -->
+	<employee id="E-001"> <!--  id is unique -->
+		<gender value="MALE"/>  <!--  gender is empty element , attribute value must accept MALE or FEMALE -->
+		<fname>A</fname>
+		<middlename></middlename> <!--  optional -->
+		<lname></lname>
+		
+	</employee>
+	
+	<employee id="E-002"> <!--  id is unique -->
+		<gender value="FEMALE"/>  <!--  gender is empty element , attribute value must accept MALE or FEMALE -->
+		<fname>A</fname>
+		<middlename></middlename> <!--  optional -->
+		<lname></lname>
+		<referedBy eid="E-001"/>  <!--  referedBy is empty element and its optional and eid is id of another element -->
+	</employee>
+</employees>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/emps" xmlns:tns="http://www.example.org/emps" elementFormDefault="qualified">
+
+    <element name="employees" type="tns:emps"></element>
+    
+    <complexType name="emps">
+    	<sequence>
+    		<element name="employee" type="tns:emp" maxOccurs="unbounded">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="emp">
+    	<sequence>
+    		<element name="id" type="integer"></element>
+    		<element name="ename" type="string"></element>
+    		<element name="salary" type="double"></element>
+    		<element name="doj" type="date"></element>
+    		<element name="phone" type="integer"></element>
+    		<element name="email" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

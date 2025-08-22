@@ -1,0 +1,17 @@
+<!DOCTYPE mails SYSTEM "mails.dtd">
+
+<mails>
+<!-- zero or more mails . Create a DTD -->
+<mail>
+	<from>arun@oracle.com</from>
+	<to>arjun@oracle.com</to>
+	<to>rajesh@oracle.com</to>
+	<message>Hello hw are you</message>
+ </mail>
+ <mail>
+	<from>tejes@oracle.com</from>
+	<to>saksham@oracle.com</to>
+	<to>akash@oracle.com</to>
+	<content>Hello hw are you</content>
+ </mail>
+</mails>

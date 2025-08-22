@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees xmlns="http://www.example.org/emps" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/emps emps.xsd ">
+  <employee>
+    <id>101</id>
+    <ename>ename</ename>
+    <salary>0.0</salary>
+    <doj>2001-01-01</doj>
+    <phone>0</phone>
+    <email>email</email>
+  </employee>
+  
+   <employee>
+    <id>101</id>
+    <ename>ename</ename>
+    <salary>0.0</salary>
+    <doj>2001-01-01</doj>
+    <phone>0</phone>
+    <email>email</email>
+  </employee>
+  
+</employees>

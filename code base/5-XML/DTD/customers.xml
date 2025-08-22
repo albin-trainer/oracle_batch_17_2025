@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE customers SYSTEM "customer.dtd">
+<customers>
+		<customer type="prime">  <!--  0 or more customer -->
+			<id>1</id>
+			<cname>Arjun</cname>
+			<email>arjun@abc.com</email>
+			<phoneNo>1234556</phoneNo> <!--  optional -->
+			<address>Bangalore</address>
+			<orders> <!--  0 or 1 orders -->
+				<order> <!--  1 or more order -->
+					<orderid>991</orderid>
+					<orderdate>5-5-25</orderdate>
+					<totalAmt>10000</totalAmt>
+				</order>
+				<order>
+					<orderid>992</orderid>
+					<orderdate>1-1-25</orderdate>
+					<totalAmt>5000</totalAmt>
+				</order>
+			</orders>
+		</customer>
+		<customer>
+			<id>2</id>
+			<cname>Sanjay</cname>
+			<email>sanjay@abc.com</email>
+			<address>Mumbai</address>
+		</customer>
+</customers>

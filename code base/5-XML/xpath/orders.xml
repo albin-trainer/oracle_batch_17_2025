@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders>
+  <order id="101" status="shipped">
+    <customer>
+      <name>Arjun</name>
+      <city>Bangalore</city>
+    </customer>
+    <items>
+      <item>
+        <product>Laptop</product>
+        <price>60000</price>
+        <quantity>1</quantity>
+      </item>
+      <item>
+        <product>Mouse</product>
+        <price>500</price>
+        <quantity>2</quantity>
+      </item>
+    </items>
+  </order>
+
+  <order id="102" status="pending">
+    <customer>
+      <name>Meera</name>
+      <city>Mumbai</city>
+    </customer>
+    <items>
+      <item>
+        <product>Mobile</product>
+        <price>15000</price>
+        <quantity>1</quantity>
+      </item>
+    </items>
+  </order>
+
+  <order id="103" status="shipped">
+    <customer>
+      <name>Suraj</name>
+      <city>Bangalore</city>
+    </customer>
+    <items>
+      <item>
+        <product>Tablet</product>
+        <price>22000</price>
+        <quantity>1</quantity>
+      </item>
+      <item>
+        <product>Keyboard</product>
+        <price>1500</price>
+        <quantity>1</quantity>
+      </item>
+    </items>
+  </order>
+</orders>

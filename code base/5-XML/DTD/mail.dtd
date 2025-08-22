@@ -1,0 +1,4 @@
+<!ELEMENT mail (from,to+,message) >
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT message (#PCDATA)>

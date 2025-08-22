@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emps>
+	<emp xmlns:emp="http://www.oracle.com/emps">
+			<emp:id>101</emp:id>
+			<emp:name>Ajaya</emp:name>
+		    <dept xmlns:dept="http://www.oracle.com/dept">
+		    	<id>9001</id>
+		    	<name>IT</name>
+		    </dept>
+	</emp>
+</emps>

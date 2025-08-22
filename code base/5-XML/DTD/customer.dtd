@@ -1,0 +1,15 @@
+<!ELEMENT customers (customer*)>
+<!ELEMENT customer (id,cname,email,phoneNo?,address,orders?)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT cname (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phoneNo (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+
+<!ELEMENT orders (order+)>
+<!ELEMENT order (orderid,orderdate,totalAmt)>
+<!ELEMENT orderid (#PCDATA)>
+<!ELEMENT orderdate (#PCDATA)>
+<!ELEMENT totalAmt (#PCDATA)>
+<!ATTLIST customer type CDATA #FIXED "prime">
+

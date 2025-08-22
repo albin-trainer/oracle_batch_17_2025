@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customerorders xmlns="http://www.example.org/orders" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/orders orders.xsd ">
+  <customers>
+    <customer id="C1">
+      <name>name</name>
+      <address>address</address>
+    </customer>
+     <customer id="C2">
+      <name>name</name>
+      <address>address</address>
+    </customer>
+  </customers>
+  <orders>
+    <order orderid="OR1" cid="C1">
+      <amoint>amoint</amoint>
+    </order>
+    <order orderid="OR2" cid="C2">
+      <amoint>amoint</amoint>
+    </order>
+    <order orderid="OR3" cid="C1">
+      <amoint>amoint</amoint>
+    </order>
+  </orders>
+</customerorders>

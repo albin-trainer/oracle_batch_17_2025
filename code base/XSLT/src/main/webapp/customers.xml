@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="c2.xsl"?>
+<customers>
+		<customer id="101" gender="male">
+			<name>Jatin</name>
+			<address>Bangalore</address>
+		</customer>
+		
+		<customer id="102" gender="male">
+			<name>Ajaya</name>
+			<address>Mysore</address>
+		</customer>
+		
+		<customer id="103" gender="female">
+			<name>Sanjana</name>
+			<address>Malleswaram</address>
+		</customer>
+		
+		<customer id="104" gender="female">
+			<name>Shubashini</name>
+			<address>Bangalore</address>
+		</customer>
+</customers>
