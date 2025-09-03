@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script>          
+            function sum(a,b){
+                console.log("two")
+            }
+            function sum(a,b,c){
+                console.log("three")
+            }
+            function sum(){
+                console.log("one");
+               console.log(arguments.length)
+              // console.log(arguments[0])
+              if(arguments.length>0){
+                  var x=0;
+                  for(let i=0;i<arguments.length;i++){
+                      x=x+arguments[i];
+                  }
+                  console.log("SUM is "+x)
+              }
+            }
+            sum();
+            sum(1,2);
+            sum(1,2,3);
+        </script>
+    </head>
+</html>

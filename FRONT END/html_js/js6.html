@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script>
+            function Emp(id,name,salary){
+                this.id=id;
+                this.name=name;
+                this.salary=salary;
+                this.print=function(){
+                    console.log(`emp id is ${this.id}, emp name is ${this.name} and salary is ${this.salary}`)
+                }
+            }
+            var e1= new Emp(101,"Sanjay",100000);
+            e1.print();
+            var e2=new Emp(102,"Aravind",50000);
+            e2.print();
+            console.log("-----------------------")
+            var emps=[ new Emp(101,"Sanjay",100000),new Emp(102,"Aravind",50000)];
+            for(let i in emps){
+                emps[i].print();
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Constructor</h1>
+    </body>
+</html>

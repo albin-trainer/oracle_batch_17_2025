@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+          var x=100;
+            function  product(id,name,price){
+                this.id=id;
+                this.name=name;
+                this.price=price;
+                this.updatePrice = function(p){
+                    this.price=this.price+p;
+                  //  console.log("updated..... "+x)
+                }                
+            }
+            let p1= new product(101,"Speaker",4000);
+            console.log(`${p1.id}, ${p1.name}, ${p1.price}`)
+                function admin(name){
+                    this.name=name;
+                }
+                let admin1 = new admin("Rishav");
+                admin1.updatePrice=p1.updatePrice;
+
+                admin1.updatePrice(500); //the context admin1 , price wont reflect for product 
+                console.log("update price is .... "+p1.price)
+                //kind of inhertitance
+               // admin1.updatePrice.call(p1);// invoking the method without params
+                admin1.updatePrice.call(p1,9); //admin is calling the updatePrice with the context of p1
+                console.log("update price is "+p1.price)
+                admin1.updatePrice.apply(p1,[9]);//pass args as array .....
+              //  console.log("update price is "+p1.price)
+        </script>
+    </head>
+</html>

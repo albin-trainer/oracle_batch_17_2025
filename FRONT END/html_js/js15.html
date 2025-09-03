@@ -1,0 +1,25 @@
+
+<html>
+    <head>
+        <script>
+  var images=["","","","","",""];// assign proper im urls
+            function changeImg(){
+                let newUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBL1k_Ex-4nD3XSg7doLGkBb-Xa4YA9lul_w&s";
+                let imgNode=document.getElementById("myImg");
+                imgNode.setAttribute("src",newUrl)
+            }
+            //every sec the image shud change automatically ....
+            var i=0;
+            function hello(){
+                console.log(i++);
+            }
+            setInterval(hello,1000);  //Every 1 sec hello() gets called automatically ....
+        </script>
+    </head>
+    <body>
+<img id="myImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDCsqRYLAFDdL4Ix_AHai7kNVyoPV9Ssv1xg&s">
+    <button onclick="changeImg()"> 
+        Change img
+    </button>
+    </body>
+</html>

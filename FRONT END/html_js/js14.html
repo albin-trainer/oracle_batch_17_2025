@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script>
+            function Person(name,address){ //2 objects 1. Function obj 2. Prototype object
+                this.name=name;
+                this.address=address;
+            }
+            Person.prototype.x=100;
+
+            console.log(Person.prototype.x)
+            let p1=new Person("Sanjay","Mumbai");
+            console.log(p1.x); //100
+            console.log(p1.__proto__.x); //100
+            p1.x=99; //it creates a field called x
+            console.log(p1.x); //99
+            console.log(p1.__proto__.x); //100
+
+            let p2=new Person("Amith","BLR");
+            console.log(p2.x); //p2.__proto__.x
+            console.log(p1.__proto__==p2.__proto__)
+
+            let emp={id:101, __proto__:p2}; //emp inherits Person p2
+            console.log(emp.name)
+            console.log(emp.x)
+            let obj= new Object();
+            obj.__proto__.data="HELLO";
+            console.log(obj.data)
+            console.log(p1.data);
+            obj.__proto__.makeFun= function (){
+                console.log("Javascript is fun .....")
+            }
+
+            let nums=[1,2,3,4]; //array obj and prototype
+            console.log(nums.data);
+            nums.makeFun();
+        </script>
+    </head>
+    <body>
+        <h1>Javascript prototype inhertitance</h1>
+    </body>
+</html>

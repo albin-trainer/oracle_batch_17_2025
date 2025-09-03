@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <script>
+            let people=[];
+            function loadData(){
+                let jsontxt=localStorage.getItem("persons");
+                 people= JSON.parse(jsontxt);
+                 displayAll();
+            }
+            function displayAll() {
+      if (people.length === 0) {
+        document.getElementById("output").innerHTML = "<p><b>No records available.</b></p>";
+        return;
+      }
+
+      let table = `
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Nationality</th>
+          </tr>
+      `;
+
+      people.forEach(p => {
+        table += `
+          <tr>
+            <td>${p.name}</td>
+            <td>${p.gender}</td>
+            <td>${p.address}</td>
+            <td>${p.nationality}</td>
+          </tr>
+        `;
+      });
+
+      table += "</table>";
+
+      document.getElementById("output").innerHTML = table;
+    }
+        </script>
+    </head>
+    <body onload="loadData()">
+        <div id="output">  HERE DATA is going to Display !!!!!!  </div>
+
+
+    </body>
+</html>

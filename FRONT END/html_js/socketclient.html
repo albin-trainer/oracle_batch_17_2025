@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WebSocket Client</title>
+ <script type="text/javascript">
+      var wsocket;      
+      function connect() {         
+ 		  wsocket = new WebSocket("ws://localhost:8080/actions");       
+          wsocket.onmessage = onMessage;  
+      }
+
+    //server  pushses response... this method invoked automatically ...
+      function onMessage(evt) {          
+         document.getElementById("rate").innerHTML=evt.data;          
+      }
+      function closeConnection(){
+     		 wsocket.close();
+   			 document.getElementById("rate").innerHTML="Session Closed"
+      }
+
+// window.addEventListener("load", connect, false);
+
+function sendMsg(){
+	wsocket.send("Hi ");
+}
+  </script>
+</head>
+<body onload="connect()">
+
+<table>
+<tr>
+<td> <label id="rateLbl">Current Rate:</label></td>
+<td> <label id="rate">0</label></td>
+</tr>
+</table>
+
+<input type="button" value="Send Msg" onclick="sendMsg()"> 
+
+
+<input type="button" value="Close" onclick="closeConnection()"> 
+</body>
+</html>

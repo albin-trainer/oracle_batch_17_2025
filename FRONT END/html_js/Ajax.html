@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <script>
+            let weatherHistory=[];
+            function weather(city,temp,description){
+                this.city=city;
+                this.temp=temp;
+                this.description=description;
+            }
+            function getWeatherData(){
+                    let city=document.getElementById("city").value;
+                    let url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=1fc450dcc52f6d29758d36b3c1b6bd2c`;
+                    let xmlhttp= new XMLHttpRequest();
+                    xmlhttp.open("GET",url) //open the connection with server
+                    xmlhttp.send(); //send the req to server, and v cant predict when we'll get the resp
+
+                    //callback function gets invoked automatically once the response is completed......
+                    xmlhttp.onload= function(){
+                            let respText=xmlhttp.responseText; //collect the responseText
+                           // console.log(respText)
+                           let w=JSON.parse(respText);
+                           console.log(w.main.temp)
+                           console.log(w.weather[0].description)
+                           document.getElementById("curTemp").innerHTML=w.main.temp;
+                           document.getElementById("description").innerHTML=w.weather[0].description;
+                           weatherHistory.push(new weather(city,w.main.temp,w.weather[0].description));
+                           let data=``;
+                           weatherHistory.forEach(w=>data=data+ `
+                                        <tr>
+                                        <td> ${w.city}</td>
+                                        <td>${w.temp}</td>
+                                        <td>${w.description}</td>
+                                      </tr>`)
+
+                                      document.getElementById("historyBody").innerHTML=data;
+                    }
+
+            }
+    </script>
+    <style>
+            #weatherForm{
+                background-color: aqua;
+              
+                width: 40%;
+            }
+            #weatherHistory{
+                background-color: aqua;
+                width: 40%;
+                padding-left: 4%;
+            }
+            .w{
+                float: left;
+                margin-left: 5%;
+                margin-top: 1%;
+                padding: 2%;
+                height: 300px;;
+            }
+            #WeatherHistoryTable{
+                border: #700b6e;
+                border-style: solid;            
+              }
+              th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: center;
+                background-color: #a854a6;
+              
+                color: white;
+        }
+    </style>
+  </head>
+  <body>
+        <div id="weatherForm" class="w">
+                Enter the city : <input type="text" id="city" onblur="getWeatherData()">
+                <p id="curTemp">Current weather to be printed here</p>
+                <p id="description">Current weather description to be printed here</p>
+         </div>
+         <div id="weatherHistory" class="w">
+            recent search
+                <table border="1" id="WeatherHistoryTable">
+                    <tr>
+                        <th>City</th>
+                        <th>Current Temp</th>
+                        <th>Description</th>
+                    </tr>
+                    <tbody id="historyBody">
+                        
+                </tbody>
+                </table>
+         </div>
+  </body>
+</html>

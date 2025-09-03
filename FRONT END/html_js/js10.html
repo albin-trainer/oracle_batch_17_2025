@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <style>
+            div{
+                background-color: rgb(191, 202, 224);
+                padding-left: 20%;
+                margin-top: 10%;
+                margin-left: 10%; margin-right: 10%;
+                font-size: 200%;
+                font-family: cursive;
+                color: blue;
+                border-style: solid;
+                border-color: brown;
+                border-radius: 5%;
+                box-shadow:  20px 30px #888888;;
+            }
+        </style>
+        <script>
+                var names=["Rijutha","Harshita"];
+               function getName(){
+                    //alert("test")
+                 let n=   document.getElementById("txtBox1").value; //reads text box node' value
+                 let paraNode=document.getElementById("p1"); //reads para node
+                 paraNode.innerHTML=`The name u entered is ${n}`;
+               } 
+               function loadData(){
+                    //populate the array in the orderedlist
+              let nameListNode= document.getElementById("nameList");  
+                names.forEach( n=> {
+                    let txtNode= document.createTextNode(n); //step1
+                    let liNode=document.createElement("li"); //step2
+                    liNode.appendChild(txtNode); //step3
+                    nameListNode.appendChild(liNode);//step4
+                } );
+               }
+        </script>
+       
+    </head>
+    <body onload="loadData()">
+        <div>
+            Enter Name : <input id="txtBox1" type="text"> <button  onclick="getName()" >Enter</button>
+            <p id="p1">Its a Paragraph</p>
+            <ol id="nameList">
+              
+            </ol>
+         </div>
+    </body>
+</html>

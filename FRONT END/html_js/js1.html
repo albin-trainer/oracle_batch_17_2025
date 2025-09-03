@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script>
+            'use strict'
+              var  a=10;
+                console.log(" A is "+a)      
+                //re declaring 
+             var  a="Hello"; //can assign with string ....
+                console.log(" A is "+a);
+                
+                let b=99;
+                console.log("B : "+b);
+              //let b="hello";
+              //console.log("B : "+b);
+
+              function sayHello(){
+                  var city="PUNE";
+                  let mycity="Pune";
+                  { //local block start
+                        var city="Bangalore"; // IS NOT  A LOCAL VARIABLE
+                        let mycity="Bangalore"; //LOCAL VARIABLE
+                  }//local block end
+                  console.log(city); //Bangalore
+                 console.log(mycity); //Pune ....
+              } //function end
+
+              sayHello();
+        </script>
+    </head>
+    <body>
+        <h1>Good morning</h1>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script>
+                var nums=[]; //empty array
+                var cities=["Bangalore","Chennai","Hyderabad","Mysore"];
+                cities[4]="Delhi";
+                cities[7]="Mumbai";
+                console.log(cities[5]); //undefined .....
+                display(cities);
+                cities.push("Pune");
+                console.log("-----After push -----")
+                display(cities);
+               
+                cities.pop(); //removes last element
+                console.log("-----After pop -----")
+                display(cities);
+                cities.shift(); //removes 1st element
+                console.log("-----After shift -----")
+
+                cities.unshift("Bangalore"); //add as  1st element
+                console.log("-----After unshift -----")
+                display(cities);
+
+              var cityCopy=    cities.slice(1,4); //returns a new array , it wont update the original 
+              console.log("-----After slice -----")
+              display(cityCopy);
+
+              ///splice is to remove / insert elements in between 
+                cities.splice(1,2); //from 1st index removes 2 elements ....
+                console.log("-----After splice -----")
+                display(cities);
+
+                cities.splice(1,0,"Chennai","Hyderabad"); //in 1st index without removing any elements chennai and hyd added
+                console.log("-----After splice -----")
+                display(cities);
+                function display(cities){
+                    for(let i in cities){ //returns only the valid index
+                        console.log(cities[i])
+                    }
+                }
+        </script>
+    </head>
+    <body>
+        
+
+    </body>
+</html>

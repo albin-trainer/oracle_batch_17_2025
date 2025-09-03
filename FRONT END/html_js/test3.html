@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+            function emp(id,name){
+                this.id=id;
+                this.name=name;
+            }
+            let e1=new emp(101,"A");
+            let e2=new emp(102,"B");
+            console.log(e1.id)
+            emp.prototype.x=100;
+            console.log(e1.x)
+            console.log(e1.__proto__.x)
+            e1.x=99;
+            console.log(e1.x)
+            console.log(e1.__proto__.x)
+            var o=new Object();
+            o.__proto__.data=456;
+            console.log(e1.data)
+
+          var c={work:"freelancer"};
+          c.__proto__=e1;
+          console.log(c.data)
+          console.log(c.id)
+          console.log(c.name)
+        </script>
+    </head>
+</html>

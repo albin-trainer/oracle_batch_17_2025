@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script>
+            //Method 1
+            let a=10;
+            var b=99;//these variables are the member if the object called window
+            function foo(){
+                console.log(a);
+                console.log(this.a);//undefined 
+                console.log(this.b); //here this represent the current object called window
+                console.log(window.b);
+            }
+            foo(); //current context is window....
+        var self=this;
+        //Method 2
+        var myObj={"data":101};
+            myObj.f1=function (){
+                console.log("f1 function")
+                console.log(this.data);
+                console.log("B :"+this.b);  //undefined   since current context is myObject 
+                console.log(self.b)        
+            }
+
+            myObj.f1();//current context is myObj
+
+            //Method 3
+            function emp(id,name){
+                this.id=id;
+                this.name=name;
+            }
+            let e1=new emp(101,"XXXX"); //here the current context is emp
+        </script>
+    </head>
+</html>

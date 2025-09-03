@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script>
+            let cities=["Bangalore","Chennai","Hyd","Mysore"];
+            cities.forEach( function  print(c){
+                console.log(`----${c}-----`)
+            });
+            //OR/////
+            console.log("***************")
+            cities.forEach(print);
+
+            function  print(c){
+                console.log(`----${c}-----`)
+            }
+            console.log("---By Arrow function----")
+            cities.forEach(c=>console.log(c));
+           cities.sort() ; ///
+           //pls display the array
+
+           let nums=[49,23,55,45,233,21,48,77,43,112,22]
+        nums.sort(sortingNums);
+        console.log("--after sorting-")
+
+        nums.forEach(n=>console.log(n));
+        function sortingNums(a,b){
+            if(a<b) return -1;
+            else return 1;
+        }
+
+        let evenNos=nums.filter(function Predicate(n){  return n%2==0; }  );   
+        console.log(evenNos) ///
+        //returns new array which has square of each num 
+        let square=nums.map( function sq(n){return n*2;} );
+        console.log(square)
+        </script>
+    </head>
+</html>

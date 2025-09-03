@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script>
+            var emp= { "id":101,"ename":"Ajaya","location":"BLR", print: function(){
+                console.log(`emp id is ${emp.id} and emp name is ${emp.name} location is ${emp.location} `) 
+            }};
+            //template expression
+            emp.print();
+
+            var cust= new Object();
+            cust.cid=991;
+            cust.cname="Kumar";
+            cust.ctype="Prime";
+            cust.print= function(){
+                console.log(this.cid+"  "+this.cname+" "+this.ctype);
+            }
+            cust.print();
+        </script>
+    </head>
+</html>

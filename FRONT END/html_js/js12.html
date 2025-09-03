@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Details Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input,
+    textarea,
+    select {
+      margin: 5px 0 15px 0;
+      padding: 8px;
+      width: 300px;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    button {
+      padding: 8px 15px;
+      margin-right: 10px;
+      cursor: pointer;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    table {
+      margin-top: 20px;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>User Details Form</h2>
+  <form id="userForm" onsubmit="addPerson(event)">
+    <!-- Name -->
+    <label for="pname">Name:</label><br>
+    <input type="text" id="pname" name="pname" required><br>
+
+    <!-- Gender -->
+    <label>Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="Male" required>
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="Female">
+    <label for="female">Female</label><br><br>
+
+    <!-- Address -->
+    <label for="address">Address:</label><br>
+    <textarea id="address" name="address"></textarea><br>
+
+    <!-- Nationality -->
+    <label for="nationality">Nationality:</label><br>
+    <input list="countries" id="nationality" name="nationality" required>
+    <datalist id="countries">
+      <option value="Indian">
+      <option value="Chinese">
+      <option value="Russian">
+      <option value="English">
+      <option value="Australian">
+    </datalist><br>
+
+    <!-- Buttons -->
+    <button type="submit">Submit</button>
+    <button type="button" onclick="displayAll()">Display All</button>
+    <button type="reset">Clear</button>
+    <button type="button" onclick="save()">SAVE</button>
+    <a href="js13.html">Click here for all person</a>
+  </form>
+
+  <!-- Table for displaying all -->
+  <div id="output">  HERE DATA is going to Display !!!!!!  </div>
+
+  <script>
+         const people = [];
+      function save(){
+         let jsontxt=  JSON.stringify(people); //convert into json text
+         localStorage.setItem("persons",jsontxt);
+         alert("SAVED");
+      }
+ 
+
+    function addPerson(event) {
+      event.preventDefault(); // stop page refresh
+
+      const name = document.getElementById("pname").value;
+      const gender = document.querySelector('input[name="gender"]:checked')?.value || "";
+      const address = document.getElementById("address").value;
+      const nationality = document.getElementById("nationality").value;
+
+      // Store person details
+      people.push({ name, gender, address, nationality });
+        console.log(people);
+      alert("Person added successfully!");
+
+      // Reset form after submission
+      document.getElementById("userForm").reset();
+    }
+
+    function displayAll() {
+      if (people.length === 0) {
+        document.getElementById("output").innerHTML = "<p><b>No records available.</b></p>";
+        return;
+      }
+
+      let table = `
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Nationality</th>
+          </tr>
+      `;
+
+      people.forEach(p => {
+        table += `
+          <tr>
+            <td>${p.name}</td>
+            <td>${p.gender}</td>
+            <td>${p.address}</td>
+            <td>${p.nationality}</td>
+          </tr>
+        `;
+      });
+
+      table += "</table>";
+
+      document.getElementById("output").innerHTML = table;
+    }
+  </script>
+</body>
+
+</html>
