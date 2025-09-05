@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"></script>
+    </head>
+
+    <body>
+        fname <input type="text" data-bind="value:fname"> <br>
+        lname <input type="text"  data-bind="value:lname"> <br>
+
+        <p data-bind="text:fname"></p>
+        <p data-bind="text:lname"></p>
+        <h1 data-bind="text:fname"></h1>
+        <h2 data-bind="text:lname"></h2>
+        Full Name : <h1  data-bind="text:fullname"> </h1>
+        <script>
+            function NameViewModel(fname,lname){
+                var self=this;
+               // this.fname=fname; //1 way binding
+               this.fname=ko.observable(fname); //2 way binding ....
+                this.lname=ko.observable(lname);
+
+              //  this.fullname=this.fname()+this.lname();
+              this.fullname= ko.computed(function(){
+                  return self.fname()+self.lname();
+              })
+            }
+            //model obj
+            var person={fname:"MS",lname:"Dhoni"};
+            //bind the model obj to view model
+            var nameViewModel=new NameViewModel(person.fname,person.lname);
+
+            ko.applyBindings(nameViewModel);
+        </script>
+    </body>
+</html>

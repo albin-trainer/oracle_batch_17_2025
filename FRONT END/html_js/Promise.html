@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script>
+            //Assume  u r getting data from server , this method return a promise object
+                function getDataFromServer(){
+                    console.log("calling .....")
+                    return new Promise( (resolved,rejected)=>{
+                            // code to connect with server
+                           // resolved("Have a Good Day !!!!");
+                           rejected("ERROR !!!!")
+                    }   );
+                }
+
+                getDataFromServer().then(res=> console.log(res) ).catch(err=>console.log("error ...."));
+        </script>
+    </head>
+</html>

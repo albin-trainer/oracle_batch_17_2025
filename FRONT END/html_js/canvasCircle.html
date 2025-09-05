@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="800" height="1000" style="border:1px solid #d3d3d3;">
+</canvas>
+
+<script>
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+x=200;
+dir="forward";
+function animate(){
+	console.log(x)
+	if(dir=="forward"){
+		x++;
+		console.log("forward")
+	}
+	else if(dir=="reverse"){
+		x--;
+		console.log("reverse")
+	}
+	
+ctx.beginPath();
+ctx.arc(x, 50, 50,0, 2 * Math.PI); //to create circle
+ctx.clearRect(0,0,600,500); //clear the canvas
+ctx.stroke(); //draw 
+//x++
+if(x==500)
+	dir="reverse";
+else if(x==200)
+	dir="forward";
+}
+
+
+setInterval("animate()",1);
+animate();
+</script> 
+
+</body>
+</html>

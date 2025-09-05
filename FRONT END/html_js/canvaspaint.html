@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+   
+    <style>
+        canvas{
+            border-style: solid;
+            margin-left: 20%;
+        }
+    </style>
+</head>
+  
+<body>   
+  
+    <canvas id="canvas"  width="500px" height="500px"></canvas>
+    <script>
+        window.addEventListener('load', function (){
+    
+    document.addEventListener('mousedown', startPainting);
+    document.addEventListener('mouseup', stopPainting);
+    document.addEventListener('mousemove', sketch);
+  
+});
+    
+const canvas = document.getElementById('canvas');
+   
+const ctx = canvas.getContext('2d');
+  
+let coord = {x:0 , y:0}; 
+   
+let paint = false;
+    
+function getPosition(event){
+  coord.x = event.clientX - canvas.offsetLeft;
+  coord.y = event.clientY - canvas.offsetTop;
+}
+  
+function startPainting(event){
+  paint = true;
+  getPosition(event);
+}
+function stopPainting(){
+ paint = false;
+}
+    
+function sketch(event){
+  if (!paint) return;
+  ctx.beginPath();
+    
+  ctx.lineWidth = 5;
+   
+  //ctx.lineCap = 'round';
+    
+  ctx.strokeStyle = 'green';
+   
+  ctx.moveTo(coord.x, coord.y);
+   
+  getPosition(event);
+  
+  ctx.lineTo(coord.x , coord.y);
+   
+  ctx.stroke();
+}
+    </script>
+</body>
+  
+</html>

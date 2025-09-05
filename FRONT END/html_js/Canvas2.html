@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <style>
+            canvas{
+                border-style: solid;
+                margin-left: 20%;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="mycanvas" width="500px" height="500px">
+            Canvas not supported
+        </canvas>
+
+        <script>
+                 let x=100;
+                 let y=200;
+                 function animate(){
+                let canvasElement=document.getElementById("mycanvas");
+                let ctx= canvasElement.getContext("2d");
+                ctx.fillStyle="lightblue";
+                ctx.font="50px Arial";
+              ctx.fillRect(50,50, 200, 100);
+               ctx.clearRect(0,0,500,500);
+
+               ctx.fillText("Oracle",x,y);     
+              
+            // ctx.beginPath();    
+            // ctx.lineWidth = 5;    
+            // ctx.strokeStyle = 'green';          
+            //   ctx.arc(x, y, 10,0, 2 * Math.PI); //to create circle
+
+               x=x+1;
+               console.log(x);
+            }
+            setInterval(animate,10); //every 10 ms animate() getting called ........
+        </script>
+    </body>
+</html>

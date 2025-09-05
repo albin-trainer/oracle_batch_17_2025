@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <style>
+            canvas{
+                border-style: solid;
+                margin-left: 20%;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="mycanvas" width="500px" height="500px">
+            Canvas not supported
+        </canvas>
+
+        <script>
+                 let x=10;
+                 let y=200;
+                 let direction="forward";
+                 function animate(){
+                     if(x>500){
+                         direction="reverse";
+                     }
+                     else if(x<=0){
+                         direction="forward";
+                     }
+                let canvasElement=document.getElementById("mycanvas");
+                let ctx= canvasElement.getContext("2d");
+                ctx.fillStyle="lightblue";
+                ctx.font="50px Arial";
+               // ctx.fillRect(50,50, 200, 100);
+               ctx.clearRect(0,0,500,500);
+               ctx.fillText("Oracle",x,y);     
+               if(direction=="forward")       
+                         x=x+1;
+                else
+                         x--;
+               console.log(x);
+            }
+            setInterval(animate,10); //every 10 ms animate() getting called ........
+        </script>
+    </body>
+</html>

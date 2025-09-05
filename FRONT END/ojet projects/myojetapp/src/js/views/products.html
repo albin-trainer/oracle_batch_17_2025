@@ -1,0 +1,28 @@
+<div>
+    <oj-table
+    id="table"
+    aria-label="Products Table"
+    accessibility.row-header="productName"
+    data="[[dataprovider]]"
+    selection-mode='{"row": "multiple", "column": "multiple"}'
+    dnd='{"reorder": {"columns": "enabled"}}'
+    scroll-policy="loadMoreOnScroll"
+    scroll-policy-options='{"fetchSize": 10}'
+    columns='[{"headerText": "Product Id", 
+               "field": "productId",
+               "headerClassName": "oj-sm-only-hide",
+               "className": "oj-sm-only-hide",
+               "resizable": "enabled",
+               "id": "productId"},
+              {"headerText": "Product Name", 
+               "field": "productName",
+               "resizable": "enabled",
+               "id": "productName"},
+              {"headerText": "price", 
+               "field": "price",
+               "headerClassName": "oj-sm-only-hide",
+               "className": "oj-sm-only-hide",
+               "resizable": "enabled",
+               "id": "price"}]'
+    class="demo-table-container"></oj-table>
+</div>
