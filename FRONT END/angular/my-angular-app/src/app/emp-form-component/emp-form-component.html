@@ -1,0 +1,26 @@
+<form class="container" (ngSubmit)="addEmp()" >
+    <div class="mb-3">
+      <label for="EmployeeId" class="form-label">Emp id </label>
+      <input type="text"  id="EmployeeId" 
+       class="form-control" name="id" [(ngModel)]="emp.empId" >
+    </div>
+    <div class="mb-3">
+      <label for="empName" class="form-label">Emp name</label>
+      <input type="text" class="form-control" 
+      id="empName" name="ename"  [(ngModel)]="emp.empName">
+    </div>
+    <div class="mb-3 form-check">
+      <label class="form-check-label" for="gender">Gender</label>
+      <select  class="form-control" 
+      name="gender" [(ngModel)]="emp.gender">
+          <option>male</option>
+          <option>female</option>
+      </select>
+    </div>
+    <div class="mb-3">
+        <label for="address" class="form-label">Address </label>
+        <input type="text" class="form-control" 
+        [(ngModel)]="emp.address" id="address" name="address">
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

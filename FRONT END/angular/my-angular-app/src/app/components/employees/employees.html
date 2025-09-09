@@ -1,0 +1,17 @@
+<p>employees works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <input type="text" class="form-control" 
+            (keyup)="searchEmps()" 
+             placeholder="Search" [(ngModel)]="search">
+     </div>
+</div>
+<div *ngFor="let e of employees">
+
+<app-emp-card-component [emp]="e">
+    
+</app-emp-card-component>
+
+</div>

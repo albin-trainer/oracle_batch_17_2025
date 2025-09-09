@@ -1,0 +1,17 @@
+<div class="container">
+<div class="empcard card">
+    <div class="card-header">
+      {{emp.empName}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{emp.address}}</h5>
+      <p class="card-text">{{emp.gender }}</p>
+      <img  *ngIf="emp.gender==='male'"  width="100px"
+      src="https://img.freepik.com/premium-vector/male-face-avatar-icon-set-flat-design-social-media-profiles_1281173-3806.jpg?semt=ais_hybrid&w=740&q=80">
+      <img  *ngIf="emp.gender==='female'"  width="100px"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjv-LlSn3OR47vA5HF_uL2jN2ha-9ZymPMzA&s">
+
+      <a href="empform/{{emp.empId}}">Edit</a>
+    </div>
+  </div>
+</div>
